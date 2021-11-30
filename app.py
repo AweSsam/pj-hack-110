@@ -55,15 +55,15 @@ def foil():
 def coconut():
     return render_template("coconut.html")
 
-@app.route("/buy")
+@app.route("/buy", methods=["GET", "POST"])
 def buy():
-    cheetos: int = request.form['cheetos']
     if request.method == "POST":
+        cheetos: int = request.form['cheetos']
         num_cheetos: str = constip(cheetos)
         if num_cheetos == "live":
-            return render_template("cheetogood.html", num_cheetos = num_cheetos)
+            return render_template("cheetogood.html", num_cheetos = cheetos)
         if num_cheetos == "constipation":
-            return render_template("cheetobad.html", num_cheetos = num_cheetos)
+            return render_template("cheetobad.html", num_cheetos = cheetos)
     return render_template("buy.html")
 
 @app.route("/save")
@@ -90,21 +90,69 @@ def moncheetos():
 def monnothing():
     return render_template("monnothing.html")
 
-@app.route("/moncheetos2")
-def moncheetos2():
-    return render_template("moncheetos2.html")
-
-@app.route("/moncoco")
-def moncoco():
-    return render_template("moncoco.html")
-
 @app.route("/monnocheetos")
 def monnocheetos():
     return render_template("monnocheetos.html")
 
-@app.route("/monnothing")
-def monnothing():
-    return render_template("monnothing.html")
+@app.route("/moncheetos2")
+def moncheetos2():
+    return render_template("moncheetos2.html")
+    
+@app.route("/monsnickers")
+def monsnickers():
+    return render_template("monsnickers.html")
+
+@app.route("/house")
+def house():
+    return render_template("house.html")
+
+@app.route("/wait")
+def wait():
+    return render_template("wait.html")
+
+@app.route("/breakin")
+def breakin():
+    return render_template("breakin.html")
+
+@app.route("/cut")
+def cut():
+    return render_template("cut.html")
+
+@app.route("/notbestoption")
+def notbestoption():
+    return render_template("notbestoption.html")
+
+@app.route("/safetypin")
+def safetypin():
+    return render_template("safetypin.html")
+
+@app.route("/house2")
+def house2():
+    return render_template("house2.html")
+
+@app.route("/rathernot")
+def rathernot():
+    return render_template("rathernot.html")
+
+@app.route("/watch")
+def watch():
+    return render_template("watch.html")
+
+@app.route("/paper")
+def paper():
+    return render_template("paper.html")
+
+@app.route("/house3")
+def house3():
+    return render_template("house3.html")
+
+@app.route("/monboat")
+def monboat():
+    return render_template("monboat.html")
+
+@app.route("/forage")
+def forage():
+    return render_template("forage.html")
 
 if __name__ == '__main__':
     app.run(debug=True)
